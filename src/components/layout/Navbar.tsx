@@ -8,8 +8,12 @@ const Navbar = () => {
     <nav className="border-b border-border bg-background">
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         <Link to="/" className="flex items-center space-x-2">
-          <div className="w-10 h-10 rounded-full golf-gradient flex items-center justify-center text-white font-bold text-xl">
-            SC
+          <div className="w-10 h-10 rounded-full bg-black flex items-center justify-center">
+            <img 
+              src="/lovable-uploads/0db6af9c-87f1-4a18-9ea7-eaffd7e56706.png" 
+              alt="Scramble Logo" 
+              className="w-8 h-8"
+            />
           </div>
           <span className="font-semibold text-xl text-golf-green">Scramble</span>
         </Link>

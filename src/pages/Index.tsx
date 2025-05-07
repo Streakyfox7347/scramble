@@ -43,7 +43,7 @@ const Index = () => {
                 Connect with Courses and Golfers
               </h1>
               <p className="text-xl mb-8">
-                Discover new courses, connect with fellow golfers, and improve your game with GolfSmart.
+                Discover new courses, connect with fellow golfers, and improve your game with Scramble.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button asChild size="lg" className="bg-golf-green hover:bg-golf-green-dark">
@@ -90,7 +90,7 @@ const Index = () => {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-golf-green mb-4">Why Use GolfSmart?</h2>
+            <h2 className="text-3xl font-bold text-golf-green mb-4">Why Use Scramble?</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Our platform helps you enhance your golfing experience by connecting you with courses and fellow golfers
             </p>

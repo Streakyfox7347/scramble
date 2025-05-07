@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-xl font-semibold mb-4">GolfSmart</h3>
+            <h3 className="text-xl font-semibold mb-4">Scramble</h3>
             <p className="text-golf-sand">
               Connect with courses and fellow golfers to enhance your golfing experience.
             </p>
@@ -60,7 +60,7 @@ const Footer = () => {
         </div>
         
         <div className="mt-12 pt-8 border-t border-golf-green-dark text-center">
-          <p>&copy; {new Date().getFullYear()} GolfSmart. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Scramble. All rights reserved.</p>
         </div>
       </div>
     </footer>

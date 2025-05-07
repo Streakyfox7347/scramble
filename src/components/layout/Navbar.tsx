@@ -9,9 +9,9 @@ const Navbar = () => {
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         <Link to="/" className="flex items-center space-x-2">
           <div className="w-10 h-10 rounded-full golf-gradient flex items-center justify-center text-white font-bold text-xl">
-            GS
+            SC
           </div>
-          <span className="font-semibold text-xl text-golf-green">GolfSmart</span>
+          <span className="font-semibold text-xl text-golf-green">Scramble</span>
         </Link>
         
         <div className="hidden md:flex items-center space-x-6">

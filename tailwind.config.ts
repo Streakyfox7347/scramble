@@ -72,6 +72,20 @@ export default {
 					sand: '#F2E8CF',
 					sky: '#93CAED',
 					gray: '#E8E8E8'
+				},
+				scramble: {
+					dark: {
+						DEFAULT: '#0B1218',
+						light: '#172634',
+					},
+					mint: {
+						DEFAULT: '#A2DCC7',
+						light: '#C4E8DB',
+					},
+					text: {
+						DEFAULT: '#FFFFFF',
+						muted: '#A0AEC0',
+					}
 				}
 			},
 			borderRadius: {
@@ -100,6 +114,9 @@ export default {
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out'
+			},
+			backgroundImage: {
+				'scramble-gradient': 'linear-gradient(to bottom, #0B1218 0%, #172634 100%)',
 			}
 		}
 	},

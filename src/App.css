@@ -1,8 +1,7 @@
 
 #root {
-  max-width: 1280px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 }
 
@@ -44,4 +43,8 @@
 
 .golf-gradient {
   background: #2C5E1A;
+}
+
+.scramble-gradient-bg {
+  background: linear-gradient(to bottom, #0B1218 0%, #172634 100%);
 }

@@ -1,10 +1,10 @@
-
 import React from 'react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import PageContainer from '@/components/layout/PageContainer';
 import CourseCard from '@/components/courses/CourseCard';
 import { MapPin, Search } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Courses = () => {
   // Sample courses data

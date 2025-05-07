@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import PageContainer from '@/components/layout/PageContainer';
 import MemberCard from '@/components/members/MemberCard';
 import { Button } from '@/components/ui/button';

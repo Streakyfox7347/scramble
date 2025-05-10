@@ -1,14 +1,29 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { User, LogOut } from 'lucide-react';
+import { useAuth } from '@/context/AuthContext';
+import { useToast } from '@/components/ui/use-toast';
 
 const Navbar = () => {
+  const { logout, currentUser } = useAuth();
+  const navigate = useNavigate();
+  const { toast } = useToast();
+  
+  const handleLogout = () => {
+    logout();
+    toast({
+      title: "Logged out",
+      description: "You have been successfully logged out",
+    });
+    navigate('/login');
+  };
+  
   return (
     <nav className="bg-transparent py-4">
       <div className="container mx-auto px-4 flex items-center justify-between">
-        <Link to="/" className="flex items-center space-x-2">
+        <Link to="/dashboard" className="flex items-center space-x-2">
           <div className="w-10 h-10 rounded-full bg-black flex items-center justify-center">
             <img 
               src="/lovable-uploads/0db6af9c-87f1-4a18-9ea7-eaffd7e56706.png" 
@@ -20,8 +35,8 @@ const Navbar = () => {
         </Link>
         
         <div className="hidden md:flex items-center space-x-8">
-          <Link to="/" className="text-white hover:text-scramble-mint transition-colors">
-            Home
+          <Link to="/dashboard" className="text-white hover:text-scramble-mint transition-colors">
+            My Dashboard
           </Link>
           <Link to="/courses" className="text-white hover:text-scramble-mint transition-colors">
             Courses
@@ -31,9 +46,6 @@ const Navbar = () => {
           </Link>
           <Link to="/faq" className="text-white hover:text-scramble-mint transition-colors">
             FAQ
-          </Link>
-          <Link to="/dashboard" className="text-white hover:text-scramble-mint transition-colors">
-            My Dashboard
           </Link>
         </div>
         
@@ -47,7 +59,12 @@ const Navbar = () => {
               <span>My Account</span>
             </Link>
           </Button>
-          <Button variant="ghost" size="icon" className="text-white hover:text-scramble-mint">
+          <Button 
+            variant="ghost" 
+            size="icon" 
+            className="text-white hover:text-scramble-mint"
+            onClick={handleLogout}
+          >
             <LogOut size={18} />
           </Button>
         </div>

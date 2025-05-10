@@ -3,6 +3,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
+import { Button } from '@/components/ui/button';
 
 interface Course {
   id: number;
@@ -122,7 +123,8 @@ const CourseMap: React.FC<CourseMapProps> = ({ courses }) => {
         </div>
       ) : null}
       
-      <style jsx>{`
+      <style>
+        {`
         .mapboxgl-popup-content {
           background-color: #172634;
           color: white;
@@ -135,7 +137,8 @@ const CourseMap: React.FC<CourseMapProps> = ({ courses }) => {
           border-top-color: #172634 !important;
           border-bottom-color: #172634 !important;
         }
-      `}</style>
+        `}
+      </style>
       
       <div 
         ref={mapContainer} 

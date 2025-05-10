@@ -1,12 +1,17 @@
-import React from 'react';
+
+import React, { useState } from 'react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import PageContainer from '@/components/layout/PageContainer';
 import CourseCard from '@/components/courses/CourseCard';
-import { MapPin, Search } from 'lucide-react';
+import CourseMap from '@/components/courses/CourseMap';
+import { MapPin, Search, Map, List } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const Courses = () => {
+  const [viewMode, setViewMode] = useState<'list' | 'map'>('list');
+  
   // Sample courses data
   const courses = [
     {
@@ -101,30 +106,51 @@ const Courses = () => {
         </div>
       </section>
 
-      {/* Courses Grid */}
+      {/* Courses Content */}
       <section className="py-12 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="mb-8">
-            <h2 className="text-2xl font-semibold">All Courses</h2>
-            <p className="text-gray-600">Found {courses.length} courses</p>
+          <div className="mb-8 flex flex-col sm:flex-row justify-between items-start sm:items-center">
+            <div>
+              <h2 className="text-2xl font-semibold">All Courses</h2>
+              <p className="text-gray-600">Found {courses.length} courses</p>
+            </div>
+            
+            <div className="mt-4 sm:mt-0">
+              <Tabs defaultValue="list" className="w-[240px]">
+                <TabsList className="grid w-full grid-cols-2">
+                  <TabsTrigger value="list" onClick={() => setViewMode('list')}>
+                    <List className="h-4 w-4 mr-2" /> List View
+                  </TabsTrigger>
+                  <TabsTrigger value="map" onClick={() => setViewMode('map')}>
+                    <Map className="h-4 w-4 mr-2" /> Map View
+                  </TabsTrigger>
+                </TabsList>
+              </Tabs>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {courses.map((course) => (
-              <CourseCard
-                key={course.id}
-                id={course.id}
-                name={course.name}
-                location={course.location}
-                description={course.description}
-                image={course.image}
-              />
-            ))}
-          </div>
+          {viewMode === 'list' ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {courses.map((course) => (
+                <CourseCard
+                  key={course.id}
+                  id={course.id}
+                  name={course.name}
+                  location={course.location}
+                  description={course.description}
+                  image={course.image}
+                />
+              ))}
+            </div>
+          ) : (
+            <CourseMap courses={courses} />
+          )}
 
-          <div className="mt-12 flex justify-center">
-            <Button variant="outline">Load More Courses</Button>
-          </div>
+          {viewMode === 'list' && (
+            <div className="mt-12 flex justify-center">
+              <Button variant="outline">Load More Courses</Button>
+            </div>
+          )}
         </div>
       </section>
 

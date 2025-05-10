@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { Input } from '@/components/ui/input';
@@ -60,16 +59,13 @@ const Login = () => {
     <div className="min-h-screen bg-scramble-gradient flex items-center justify-center p-4">
       <div className="w-full max-w-md">
         <div className="flex justify-center mb-8">
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-12 h-12 rounded-full bg-black flex items-center justify-center">
-              <img 
-                src="/lovable-uploads/0db6af9c-87f1-4a18-9ea7-eaffd7e56706.png" 
-                alt="Scramble Logo" 
-                className="w-10 h-10"
-              />
-            </div>
-            <span className="font-semibold text-2xl text-white">Scramble</span>
-          </Link>
+          <div className="w-20 h-20 rounded-full bg-black flex items-center justify-center">
+            <img 
+              src="/lovable-uploads/0db6af9c-87f1-4a18-9ea7-eaffd7e56706.png" 
+              alt="Scramble Logo" 
+              className="w-16 h-16"
+            />
+          </div>
         </div>
         
         <Card className="bg-scramble-dark-light border-slate-700">

@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import { User, LogOut } from 'lucide-react';
 
 const Navbar = () => {
   return (
@@ -22,17 +23,17 @@ const Navbar = () => {
           <Link to="/" className="text-white hover:text-scramble-mint transition-colors">
             Home
           </Link>
-          <Link to="/about" className="text-white hover:text-scramble-mint transition-colors">
-            About Us
-          </Link>
-          <Link to="/faq" className="text-white hover:text-scramble-mint transition-colors">
-            FAQ
-          </Link>
           <Link to="/courses" className="text-white hover:text-scramble-mint transition-colors">
             Courses
           </Link>
           <Link to="/members" className="text-white hover:text-scramble-mint transition-colors">
             Members
+          </Link>
+          <Link to="/faq" className="text-white hover:text-scramble-mint transition-colors">
+            FAQ
+          </Link>
+          <Link to="/dashboard" className="text-white hover:text-scramble-mint transition-colors">
+            My Dashboard
           </Link>
         </div>
         
@@ -41,7 +42,13 @@ const Navbar = () => {
             Support
           </Link>
           <Button asChild variant="outline" className="rounded-full border-scramble-mint text-white hover:bg-scramble-mint hover:text-scramble-dark">
-            <Link to="/signup">Join Now</Link>
+            <Link to="/dashboard" className="flex items-center space-x-2">
+              <User size={16} />
+              <span>My Account</span>
+            </Link>
+          </Button>
+          <Button variant="ghost" size="icon" className="text-white hover:text-scramble-mint">
+            <LogOut size={18} />
           </Button>
         </div>
       </div>

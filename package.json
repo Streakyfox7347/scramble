@@ -1,15 +1,6 @@
 {
   "name": "vite_react_shadcn_ts",
-  {
-  "name": "scramble",
-  "homepage": "https://streakyfox7347.github.io/scramble/", <--- ADD THIS LINE (including the trailing slash!)
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    // ... (your existing dependencies)
-  },
-  // ... (rest of your package.json)
-}
+  "homepage": "https://streakyfox7347.github.io/scramble/",
   "private": true,
   "version": "0.0.0",
   "type": "module",

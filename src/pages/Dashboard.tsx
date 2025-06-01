@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'; // Added useRef for file input
+import React from 'react';
 import { Link } from 'react-router-dom';
 import PageContainer from '@/components/layout/PageContainer';
 import MemberSidebar from '@/components/profile/MemberSidebar';
@@ -8,28 +8,7 @@ import { Separator } from '@/components/ui/separator';
 import { MapPin } from 'lucide-react';
 
 const Dashboard = () => {
-  // 1. Create a reference to the hidden file input element
-  const fileInputRef = useRef<HTMLInputElement>(null);
-
-  // 2. Function to handle the button click
-  // This will programmatically "click" the hidden file input
-  const handleEditProfilePictureClick = () => {
-    fileInputRef.current?.click();
-  };
-
-  // 3. Function to handle when a file is selected by the user
-  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const selectedFile = event.target.files?.[0]; // Get the first file if one was selected
-    if (selectedFile) {
-      console.log('Selected file for profile picture:', selectedFile.name);
-      // At this point, you have the file object.
-      // Next steps (not included here, but what you'd do later):
-      // - Display a preview of the image on the page.
-      // - Send this 'selectedFile' to your Odoo backend using an API call.
-    }
-  };
-
-  // Mock recent activity data (existing code)
+  // Mock recent activity data
   const recentActivity = [
     { id: 1, type: 'course-view', name: 'Pine Valley Golf Club', date: '2 days ago' },
     { id: 2, type: 'member-contact', name: 'Sarah Johnson', date: '1 week ago' },
@@ -37,7 +16,7 @@ const Dashboard = () => {
     { id: 4, type: 'course-view', name: 'Pebble Beach Golf Links', date: '2 weeks ago' }
   ];
 
-  // Mock recommended courses (existing code)
+  // Mock recommended courses
   const recommendedCourses = [
     {
       id: 1,
@@ -60,24 +39,6 @@ const Dashboard = () => {
           {/* Sidebar */}
           <div className="md:col-span-1">
             <MemberSidebar />
-            {/* START OF NEW CODE: Add the button and hidden input */}
-            <div className="mt-6 text-center">
-              <Button
-                variant="outline"
-                onClick={handleEditProfilePictureClick} // Call our function when this button is clicked
-                className="w-full"
-              >
-                Edit Profile Picture
-              </Button>
-              <input
-                type="file" // This makes it a file input
-                accept="image/*" // Restrict to image files only (e.g., .jpg, .png, .gif)
-                ref={fileInputRef} // Attach our ref to this input
-                onChange={handleFileChange} // Call our function when a file is chosen
-                style={{ display: 'none' }} // Hide this input, as we're clicking it programmatically
-              />
-            </div>
-            {/* END OF NEW CODE */}
           </div>
 
           {/* Main Content */}

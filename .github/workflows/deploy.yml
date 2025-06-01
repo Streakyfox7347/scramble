@@ -1,0 +1,37 @@
+name: Deploy React App to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # This workflow runs when you push to the 'main' branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest # The type of virtual machine to run the job on
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4 # Action to check out your repository code
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4 # Action to set up Node.js environment
+        with:
+          node-version: '18' # Use Node.js version 18 (commonly compatible)
+          cache: 'npm' # Cache npm dependencies for faster builds
+
+      - name: Install Dependencies
+        run: npm install # Install all packages listed in package.json
+
+      - name: Build React App
+        # This command runs the build script defined in your package.json
+        # It typically creates a 'dist' or 'build' folder with compiled files.
+        run: npm run build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3 # A popular GitHub Action for deploying to GH Pages
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }} # Automatically provided GitHub token
+          publish_dir: ./dist # **CRITICAL: This tells it to deploy the 'dist' folder.**
+          # If your Lovable project creates a 'build' folder instead of 'dist', change this to './build'
+          # You may need to specify the base URL for React Router if you're using BrowserRouter
+          # cname: 'yourdomain.com' # Uncomment and add your custom domain if you have one

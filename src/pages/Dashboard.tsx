@@ -71,7 +71,7 @@ const Dashboard = () => {
               </Button>
               <input
                 type="file" // This makes it a file input
-                accept="image/*" // Restrict to image files only
+                accept="image/*" // Restrict to image files only (e.g., .jpg, .png, .gif)
                 ref={fileInputRef} // Attach our ref to this input
                 onChange={handleFileChange} // Call our function when a file is chosen
                 style={{ display: 'none' }} // Hide this input, as we're clicking it programmatically

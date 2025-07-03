@@ -32,7 +32,7 @@ const MemberSidebar = ({
           </Avatar>
           
           <div className="mt-4 text-center">
-            <h3 className="font-semibold text-lg">{name}</h3>
+            <h3 className="font-semibold text-lg" style={{ color: '#94d1bd' }}>{name}</h3>
             <div className="flex items-center justify-center mt-1 text-gray-600">
               <span className="font-medium">Handicap:</span>
               <span className="ml-2">{handicap}</span>

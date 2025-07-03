@@ -181,7 +181,7 @@ const MemberSidebar = ({
                 className="mt-1 h-8"
               />
             ) : (
-              <p className="font-medium truncate" style={{ color: '#94d1bd' }}>{homeCourse}</p>
+              <p className="font-medium truncate" style={{ color: '#94d1bd !important' }}>{homeCourse}</p>
             )}
           </div>
           <div>
@@ -194,7 +194,7 @@ const MemberSidebar = ({
                 className="mt-1 h-8"
               />
             ) : (
-              <p className="font-medium" style={{ color: '#94d1bd' }}>{rounds}</p>
+              <p className="font-medium" style={{ color: '#94d1bd !important' }}>{rounds}</p>
             )}
           </div>
           <div>
@@ -207,7 +207,7 @@ const MemberSidebar = ({
                 className="mt-1 h-8"
               />
             ) : (
-              <p className="font-medium" style={{ color: '#94d1bd' }}>{bestScore}</p>
+              <p className="font-medium" style={{ color: '#94d1bd !important' }}>{bestScore}</p>
             )}
           </div>
           <div>
@@ -219,7 +219,7 @@ const MemberSidebar = ({
                 className="mt-1 h-8"
               />
             ) : (
-              <p className="font-medium" style={{ color: '#94d1bd' }}>{memberSince}</p>
+              <p className="font-medium" style={{ color: '#94d1bd !important' }}>{memberSince}</p>
             )}
           </div>
         </div>

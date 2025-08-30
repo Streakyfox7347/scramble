@@ -2,6 +2,7 @@
 import React from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import BreadcrumbNav from '../navigation/BreadcrumbNav';
 
 interface PageContainerProps {
   children: React.ReactNode;
@@ -20,8 +21,16 @@ const PageContainer = ({
     <div className={`min-h-screen flex flex-col ${darkBackground ? 'bg-scramble-gradient' : 'bg-scramble-dark'}`}>
       <Navbar />
       <main className={`flex-1 ${className}`}>
-        {fullWidth ? children : (
+        {fullWidth ? (
+          <>
+            <div className="container mx-auto px-4">
+              <BreadcrumbNav />
+            </div>
+            {children}
+          </>
+        ) : (
           <div className="container mx-auto px-4">
+            <BreadcrumbNav />
             {children}
           </div>
         )}

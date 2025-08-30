@@ -29,7 +29,7 @@ const MemberSidebar = ({
   const [homeCourse, setHomeCourse] = useState('Pine Valley');
   const [rounds, setRounds] = useState(24);
   const [bestScore, setBestScore] = useState(78);
-  const [memberSince, setMemberSince] = useState('2023');
+  const memberSince = '2023'; // Non-editable, based on join date
 
   const handleSaveHandicap = () => {
     setIsEditingHandicap(false);
@@ -60,12 +60,12 @@ const MemberSidebar = ({
     <Card className="w-full bg-white shadow-md">
       <div className="p-6">
         <div className="flex flex-col items-center mb-6">
-          <Avatar className="h-24 w-24 border-2 border-golf-green">
+          <Avatar className="h-24 w-24 border-2 border-primary">
             {currentProfileImage ? (
               <AvatarImage src={currentProfileImage} alt={currentName} />
             ) : (
-              <AvatarFallback className="bg-golf-green-light text-white">
-                <User size={32} style={{ color: '#94d1bd' }} />
+              <AvatarFallback className="bg-primary/20 text-primary">
+                <User size={32} />
               </AvatarFallback>
             )}
           </Avatar>
@@ -86,10 +86,10 @@ const MemberSidebar = ({
                 </Button>
               </div>
             ) : (
-              <h3 className="font-semibold text-lg" style={{ color: '#94d1bd' }}>{currentName}</h3>
+              <h3 className="font-semibold text-lg text-primary">{currentName}</h3>
             )}
             
-            <div className="flex items-center justify-center mt-1 text-gray-600">
+            <div className="flex items-center justify-center mt-1 text-muted-foreground">
               <span className="font-medium">Handicap:</span>
               {isEditingHandicap ? (
                 <div className="ml-2 flex items-center gap-2">
@@ -108,7 +108,7 @@ const MemberSidebar = ({
                   </Button>
                 </div>
               ) : (
-                <span className="ml-2">{currentHandicap}</span>
+                <span className="ml-2 text-primary font-medium">{currentHandicap}</span>
               )}
             </div>
           </div>
@@ -169,11 +169,11 @@ const MemberSidebar = ({
         </div>
       </div>
       
-      <div className="px-6 py-4 bg-golf-sand bg-opacity-30 border-t border-golf-sand">
-        <h4 className="font-medium text-sm text-golf-green mb-2">Quick Stats</h4>
+      <div className="px-6 py-4 bg-muted/30 border-t border-border">
+        <h4 className="font-medium text-sm text-primary mb-2">Quick Stats</h4>
         <div className="grid grid-cols-2 gap-2 text-sm">
           <div>
-            <span className="text-gray-600">Home Course:</span>
+            <span className="text-muted-foreground">Home Course:</span>
             {isEditingDetails ? (
               <Input
                 value={homeCourse}
@@ -181,11 +181,11 @@ const MemberSidebar = ({
                 className="mt-1 h-8"
               />
             ) : (
-              <p className="font-medium truncate" style={{ color: '#94d1bd !important' }}>{homeCourse}</p>
+              <p className="font-medium truncate text-primary">{homeCourse}</p>
             )}
           </div>
           <div>
-            <span className="text-gray-600">Rounds:</span>
+            <span className="text-muted-foreground">Rounds:</span>
             {isEditingDetails ? (
               <Input
                 type="number"
@@ -194,11 +194,11 @@ const MemberSidebar = ({
                 className="mt-1 h-8"
               />
             ) : (
-              <p className="font-medium" style={{ color: '#94d1bd !important' }}>{rounds}</p>
+              <p className="font-medium text-primary">{rounds}</p>
             )}
           </div>
           <div>
-            <span className="text-gray-600">Best Score:</span>
+            <span className="text-muted-foreground">Best Score:</span>
             {isEditingDetails ? (
               <Input
                 type="number"
@@ -207,20 +207,12 @@ const MemberSidebar = ({
                 className="mt-1 h-8"
               />
             ) : (
-              <p className="font-medium" style={{ color: '#94d1bd !important' }}>{bestScore}</p>
+              <p className="font-medium text-primary">{bestScore}</p>
             )}
           </div>
           <div>
-            <span className="text-gray-600">Member Since:</span>
-            {isEditingDetails ? (
-              <Input
-                value={memberSince}
-                onChange={(e) => setMemberSince(e.target.value)}
-                className="mt-1 h-8"
-              />
-            ) : (
-              <p className="font-medium" style={{ color: '#94d1bd !important' }}>{memberSince}</p>
-            )}
+            <span className="text-muted-foreground">Member Since:</span>
+            <p className="font-medium text-primary">{memberSince}</p>
           </div>
         </div>
       </div>

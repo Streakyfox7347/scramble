@@ -20,6 +20,8 @@ import NotFound from "./pages/NotFound";
 import FAQ from "./pages/FAQ";
 import Support from "./pages/Support";
 import Login from "./pages/Login";
+import Invites from "./pages/Invites";
+import Messages from "./pages/Messages";
 
 const queryClient = new QueryClient();
 
@@ -89,6 +91,16 @@ const App = () => (
             <Route path="/support" element={
               <ProtectedRoute>
                 <Support />
+              </ProtectedRoute>
+            } />
+            <Route path="/invites" element={
+              <ProtectedRoute>
+                <Invites />
+              </ProtectedRoute>
+            } />
+            <Route path="/messages" element={
+              <ProtectedRoute>
+                <Messages />
               </ProtectedRoute>
             } />
             

@@ -38,11 +38,17 @@ const Navbar = () => {
           <Link to="/dashboard" className="text-white hover:text-scramble-mint transition-colors">
             My Dashboard
           </Link>
+          <Link to="/invites" className="text-white hover:text-scramble-mint transition-colors">
+            Invites
+          </Link>
           <Link to="/courses" className="text-white hover:text-scramble-mint transition-colors">
             Courses
           </Link>
           <Link to="/members" className="text-white hover:text-scramble-mint transition-colors">
             Members
+          </Link>
+          <Link to="/messages" className="text-white hover:text-scramble-mint transition-colors">
+            Messages
           </Link>
           <Link to="/faq" className="text-white hover:text-scramble-mint transition-colors">
             FAQ

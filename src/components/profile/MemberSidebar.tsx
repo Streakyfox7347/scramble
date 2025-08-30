@@ -169,11 +169,11 @@ const MemberSidebar = ({
         </div>
       </div>
       
-      <div className="px-6 py-4 bg-muted/30 border-t border-border">
-        <h4 className="font-medium text-sm text-primary mb-2">Quick Stats</h4>
-        <div className="grid grid-cols-2 gap-2 text-sm">
+      <div className="px-6 py-4 bg-card border-t border-border">
+        <h4 className="font-semibold text-base text-foreground mb-3">Quick Stats</h4>
+        <div className="grid grid-cols-2 gap-4 text-sm">
           <div>
-            <span className="text-muted-foreground">Home Course:</span>
+            <span className="text-foreground font-medium block mb-1">Home Course:</span>
             {isEditingDetails ? (
               <Input
                 value={homeCourse}
@@ -181,11 +181,11 @@ const MemberSidebar = ({
                 className="mt-1 h-8"
               />
             ) : (
-              <p className="font-medium truncate text-primary">{homeCourse}</p>
+              <p className="font-semibold text-primary text-base">{homeCourse}</p>
             )}
           </div>
           <div>
-            <span className="text-muted-foreground">Rounds:</span>
+            <span className="text-foreground font-medium block mb-1">Rounds:</span>
             {isEditingDetails ? (
               <Input
                 type="number"
@@ -194,11 +194,11 @@ const MemberSidebar = ({
                 className="mt-1 h-8"
               />
             ) : (
-              <p className="font-medium text-primary">{rounds}</p>
+              <p className="font-semibold text-primary text-base">{rounds}</p>
             )}
           </div>
           <div>
-            <span className="text-muted-foreground">Best Score:</span>
+            <span className="text-foreground font-medium block mb-1">Best Score:</span>
             {isEditingDetails ? (
               <Input
                 type="number"
@@ -207,12 +207,12 @@ const MemberSidebar = ({
                 className="mt-1 h-8"
               />
             ) : (
-              <p className="font-medium text-primary">{bestScore}</p>
+              <p className="font-semibold text-primary text-base">{bestScore}</p>
             )}
           </div>
           <div>
-            <span className="text-muted-foreground">Member Since:</span>
-            <p className="font-medium text-primary">{memberSince}</p>
+            <span className="text-foreground font-medium block mb-1">Member Since:</span>
+            <p className="font-semibold text-primary text-base">{memberSince}</p>
           </div>
         </div>
       </div>
